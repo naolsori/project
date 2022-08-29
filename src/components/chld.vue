@@ -1,12 +1,32 @@
 <template>
-<h1> {{name}} </h1>
+<ul>
+    <li v-for="item in users" :key="item.name">
+        <user :data="item" /></li>
+</ul>
 </template>
+
 <script>
-export default{
+import user from './user.vue'
+export default {
     name: 'chld',
-    props: {
-     name
+    components: {
+        user
+    },
+
+    data() {
+        return {
+            users: [{
+                    name: "tom",
+                    email: "tom@test.com"
+
+                },
+                {
+                    name: "abr",
+                    email: "abr@test.com"
+
+                }
+            ]
+        }
     }
 }
-
 </script>
