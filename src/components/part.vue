@@ -1,38 +1,33 @@
 <template>
-    <ul>
-        <li v-for="item in users" :key="item.name">
-            <user :data="item" :getdata="getdata" /></li>
-    </ul>
+<user>
+    <template v-slot:header>
+        <h1> peter </h1>
     </template>
-    
-    <script>
-    import user from './user.vue'
-    export default {
-        name: 'part',
-        components: {
-            user
-        },
-        methods: {
-        getdata(name){
-            alert(name)
-        }
-    },
-    
-        data() {
-            return {
-                users: [{
-                        name: "tom",
-                        email: "tom@test.com"
-    
-                    },
-                    {
-                        name: "abr",
-                        email: "abr@test.com"
-    
-                    }
-                ]
-            }
-        }
+    <template v-slot:main>
+        <p> nahu</p>
+    </template>
+    <template v-slot:footer><button>Buy now</button></template>
+
+</user>
+<user>
+    <template v-slot:header>
+        <h1> peter </h1>
+    </template>
+    <template v-slot:main>
+        <p> nahu</p>
+    </template>
+    <template v-slot:footer><button>Buy now</button></template>
+
+</user>
+</template>
+
+<script>
+import user from './user.vue'
+export default {
+    name: 'part',
+    components: {
+        user
     }
-    </script>
-    
+}
+</script>
+
